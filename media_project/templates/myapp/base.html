@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h4> This is our Home Page </h4>
+    <ul>
+        <li>I want to create Student Details</li>
+        <li>I want to create Teacher Details</li>
+        <li>I will use model inheritance Properties</li>
+        <li> I will apply abstract model class </li>
+        
+    </ul>
+    <img src="{% static 'myapp/pic.jpg'  %}" width="200" height="200"  alt="My image">
+    <div>
+        <p><a href="/crstudent/">create-student</a></p>
+        <p><a href="/crteacher/">create-teacher</a></p>
+    </div>
+</body>
+</html>

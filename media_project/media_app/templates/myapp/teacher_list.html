@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teacher-list</title>
+</head>
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>State</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Photo</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{teacher.name}}</td>
+                <td>{{teacher.gender}}</td>
+                <td>{{teacher.state}}</td>
+                <td>{{teacher.age}}</td>
+                <td>{{teacher.salary}}</td>
+                <td>
+                    <img src="{{teacher.Photo.url}}" alt="">
+                    <p>{{teacher.name}}</p>
+                    </td>
+                <td><a href="{% url 'teacher-edit' teacher.pk %}">Update</a></td>
+                <td><a href="{% url 'teacher-delete' teacher.pk %}">Remove</a></td>
+            </tr>
+            {% endfor  %}
+        </tbody>
+        
+    </table>
+    <div>
+        <p><a href="/crteacher/">create-teacher</a></p>
+    </div>
+    
+    
+</body>
+</html>
