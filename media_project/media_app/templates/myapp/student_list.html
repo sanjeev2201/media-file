@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-list</title>
+</head>
+<body>
+    <h1>Job Holder list</h1>
+    <h3>{{date}}</h3>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+    <table border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>State</th>
+                <th>Age</th>
+                <th>Date of Birth</th>
+                <th>Job Location</th>
+                <th>Student Photo</th>
+                <th>Student Resume</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{student.name}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.state}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.dob}}</td>
+                <td>{{student.job_location}}</td>
+                <td><img src="{{student.Photo.url}}" width="100" height="100" alt="photo">
+                <p>{{student.name}}</p></td>
+                <td><a href="{{student.Resume.url}}">Download-file</a></td>
+            </tr>
+            {% endfor  %}
+        </tbody>
+        
+    </table>
+    <div>
+        <p><a href="/crstudent/">create-student</a></p>
+        
+    </div>
+</body>
+</html>

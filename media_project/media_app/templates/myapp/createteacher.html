@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher-form</title>
+</head>
+<body>
+    <form method ='post' enctype ="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{form}}
+        </table>
+        <input type="submit" value = "Submit">
+        <div>
+            <p><a href="/home/">Go-to-Home</a></p>
+            <p><a href="/teacherlist/">Go-to-teacher-list</a></p>
+        </div>
+    </form>
+</body>
+</html>
