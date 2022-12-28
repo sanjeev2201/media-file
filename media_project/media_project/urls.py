@@ -20,7 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.home,name='home'),
+    path('home/',views.home_page,name='home'),
+    path('',views.index_page,name='index'),
+    path('login/',views.login_request,name="login"),
+    path('signup/',views.signup,name="signup"),
+    path('logout/',views.logout,name="logout"),
+    path('userlist/',views.user_list,name='user-list'),
     path('',include('media_app.urls'))
 ]
 if settings.DEBUG:
